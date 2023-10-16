@@ -1,5 +1,4 @@
 const router = require("express").Router()
-const { verifyToken } = require("../middlewares/verifyToken")
 
 const photoRoutes = ("./photo.routes")
 app.use("/photo", photoRoutes)
@@ -12,5 +11,8 @@ app.use("comment", commentRouter)
 
 const uploadRoutes = require('./upload.routes')
 router.use("/upload", uploadRoutes)
+
+const authRoutes = require('./auth.routes')
+router.use("/auth", authRoutes)
 
 module.exports = router
