@@ -1,13 +1,13 @@
 const router = require("express").Router()
 
-const photoRoutes = ("./photo.routes")
-app.use("/photo", photoRoutes)
+const photoRoutes = ('./photo.routes')
+router.use("/photo", photoRoutes)
 
-const userRouter = ("./user.routes")
-app.use("/user", userRouter)
+const userRouter = ('./user.routes')
+router.use("/user", userRouter)
 
-const commentRouter = ("./comment.routes")
-app.use("comment", commentRouter)
+const commentRouter = ('./comment.routes')
+router.use("/comment", commentRouter)
 
 const uploadRoutes = require('./upload.routes')
 router.use("/upload", uploadRoutes)

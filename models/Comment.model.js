@@ -5,7 +5,7 @@ const commentSchema = new Schema(
         description: {
             type: String,
             required: [true, 'description is required'],
-            minlength: [3, 'title must be 3 characters length'],
+            minlength: [5, 'title must be 5 characters length'],
         },
         user: {
             type: Schema.Types.ObjectId,

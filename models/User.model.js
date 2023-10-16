@@ -13,14 +13,14 @@ const userSchema = new Schema(
     },
     name: {
       type: String,
-      required: [true, 'name i required'],
-      minlength: [3, 'Username must be 2 characters length'],
-      maxlength: [20, 'Username must be 10 characters length']
+      required: [true, 'name is required'],
+      minlength: [3, 'name must be 2 characters length'],
+      maxlength: [20, 'name must be 10 characters length']
     },
     lastName: {
       type: String,
-      minlength: [3, 'Username must be 2 characters length'],
-      required: [true, 'name i required']
+      minlength: [3, 'lastName must be 2 characters length'],
+      required: [true, 'lastName is required']
     },
     password: {
       type: String,
