@@ -8,7 +8,7 @@ const photoSchema = new Schema(
             minlength: [3, 'title must be 3 characters length'],
             maxlength: [20, 'title must be 20 characters length']
         },
-        Image: {
+        image: {
             type: String,
             required: [true, 'Image is required']
         },

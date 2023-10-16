@@ -1,4 +1,6 @@
 const { Schema, model } = require("mongoose");
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
 
 const userSchema = new Schema(
   {
@@ -49,8 +51,8 @@ userSchema.pre('save', function (next) {
 })
 
 userSchema.methods.signToken = function () {
-  const { _id, username, email, role } = this
-  const payload = { _id, username, email, role }
+  const { _id, name, lastName, email, role } = this
+  const payload = { _id, name, lastName, email, role }
 
   const authToken = jwt.sign(
     payload,
