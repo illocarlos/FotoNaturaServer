@@ -1,11 +1,12 @@
 const Comment = require('../models/Comment.model')
 const Photo = require('../models/Photo.model')
-// Comment tiene en su modelo el foto 
 
-const newComment = (req, res, nex) => {
+const newComment = (req, res, next) => {
     const { description } = req.body
     const { _id: user } = req.payload
+
     Comment
+
         .create({ description, user })
         .then(comment => res.json(comment))
         .catch(err => next(err))
@@ -56,6 +57,10 @@ const deleteComment = (req, res, next) => {
             next(err)
         })
 }
+
+
+
+
 
 
 module.exports = {

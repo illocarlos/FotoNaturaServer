@@ -10,7 +10,11 @@ const photoSchema = new Schema(
         },
         image: {
             type: String,
-            required: [true, 'Image is required']
+            required: [true, 'Image is required'],
+            validate: {
+                validator: value => value.length > 0,
+                message: 'At least one photo is required'
+            }
         },
         comments: [{
             type: Schema.Types.ObjectId,

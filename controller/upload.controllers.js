@@ -8,19 +8,19 @@ const image = (req, res) => {
 
     res.json({ cloudinary_url: req.file.path })
 }
-// const images = (req, res) => {
+const images = (req, res) => {
 
-//     if (!req.files) {
-//         res.status(500).json({ errorMessage: 'Error cargando el archivo' })
-//         return
-//     }
+    if (!req.files) {
+        res.status(500).json({ errorMessage: 'Error cargando el archivo' })
+        return
+    }
 
-//     const urls = req.files.map(file => file.path)
+    const urls = req.files.map(file => file.path)
 
-//     res.json({ cloudinary_urls: urls })
-// }
+    res.json({ cloudinary_urls: urls })
+}
 
 module.exports = {
-    image
-
+    image,
+    images
 }

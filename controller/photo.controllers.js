@@ -1,6 +1,5 @@
 const Photo = require('../models/Photo.model')
 const User = require('../models/User.model')
-// foto tiene en su modelo el usuario 
 
 const newPhoto = (req, res, next) => {
     const { title, image } = req.body
@@ -57,11 +56,13 @@ const deletePhoto = (req, res, next) => {
 }
 
 
+
+
 module.exports = {
     deletePhoto,
     addPhotoToUser,
     newPhoto,
     listPhoto,
-    photoId
+    photoId,
 
 }
