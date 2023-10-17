@@ -2,10 +2,10 @@ const User = require('../models/User.model')
 
 const signUpUser = (req, res, next) => {
 
-    const { name, lastName, email, password, photo } = req.body
+    const { name, lastName, email, password, avatar } = req.body
 
     User
-        .create({ name, lastName, email, password, photo })
+        .create({ name, lastName, email, password, avatar })
         .then(() => res.sendStatus(201))
         .catch(err => next(err))
 }
@@ -18,7 +18,7 @@ const logInUser = (req, res, next) => {
         res.status(400).json({ message: "Provide email and password." });
         return;
     }
-    console.log({ email })
+
     User
         .findOne({ email })
         .then((foundUser) => {

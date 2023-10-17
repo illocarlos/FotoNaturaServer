@@ -11,6 +11,10 @@ const userSchema = new Schema(
       lowercase: true,
       trim: true
     },
+    avatar: {
+      type: String,
+      required: [true, 'photo is required.'],
+    },
     name: {
       type: String,
       required: [true, 'name is required'],
@@ -24,11 +28,12 @@ const userSchema = new Schema(
     },
     password: {
       type: String,
-      required: [true, 'Password is required.']
+      required: [true, 'Password is required.'],
+      minlength: [3, 'Min 3 character'],
     },
-    photo: [{
+    photos: [{
       type: Schema.Types.ObjectId,
-      ref: 'Photo'
+      ref: 'photo'
     }],
     role: {
       type: String,
@@ -51,8 +56,8 @@ userSchema.pre('save', function (next) {
 })
 
 userSchema.methods.signToken = function () {
-  const { _id, name, lastName, email, role } = this
-  const payload = { _id, name, lastName, email, role }
+  const { _id, avatar, name, lastName, email, role } = this
+  const payload = { _id, avatar, name, lastName, email, role }
 
   const authToken = jwt.sign(
     payload,

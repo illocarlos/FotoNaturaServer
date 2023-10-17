@@ -12,10 +12,10 @@ const photoSchema = new Schema(
             type: String,
             required: [true, 'Image is required']
         },
-        comment: {
+        comments: [{
             type: Schema.Types.ObjectId,
-            ref: 'Comment'
-        }
+            ref: 'comment'
+        }]
 
     },
 
