@@ -18,6 +18,6 @@ router.post('/newPhoto', newPhoto)
 
 router.post('/addPhotoToUser', addPhotoToUser)
 
-router.post('/deletePhoto', deletePhoto)
+router.post('/deletedPhoto', deletePhoto)
 
 module.exports = router

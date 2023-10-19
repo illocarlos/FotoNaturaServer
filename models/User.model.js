@@ -26,6 +26,11 @@ const userSchema = new Schema(
       minlength: [3, 'lastName must be 2 characters length'],
       required: [true, 'lastName is required']
     },
+    about: {
+      type: String,
+      minlength: [20, 'lastName must be 2 characters length'],
+      required: [true, 'lastName is required']
+    },
     password: {
       type: String,
       required: [true, 'Password is required.'],

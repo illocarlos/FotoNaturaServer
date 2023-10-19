@@ -2,10 +2,10 @@ const User = require('../models/User.model')
 
 const signUpUser = (req, res, next) => {
 
-    const { name, lastName, email, password, avatar } = req.body
+    const { name, lastName, email, password, avatar, about } = req.body
 
     User
-        .create({ name, lastName, email, password, avatar })
+        .create({ name, lastName, email, password, avatar, about })
         .then(() => res.sendStatus(201))
         .catch(err => next(err))
 }

@@ -10,7 +10,7 @@ const {
 } = require('../controller/comment.controllers')
 
 
-router.get('/listComment', listComment)
+router.get('/list', listComment)
 
 router.get('/:comment_id', commentId)
 
